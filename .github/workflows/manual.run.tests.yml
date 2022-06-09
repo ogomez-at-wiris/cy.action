@@ -1,0 +1,16 @@
+# Manually run Cypress tests stored in the /integrations folder of this repo
+
+name: Run Cypress tests manually
+
+on:
+  workflow_dispatch:
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-20.04
+    # stop the job if it runs over 4 minutes
+    # Dios me libre de usar todos los minutos de Github de Wiris
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v2
+      - uses: cypress-io/github-action@v4
