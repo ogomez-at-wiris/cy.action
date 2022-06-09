@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/wiris/qa_team_cypress_poc#readme",
   "devDependencies": {
-    "cypress": "^10.0.1"
+    "cypress": "^9.6.1"
   }
 }
