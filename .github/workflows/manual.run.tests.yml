@@ -12,5 +12,12 @@ jobs:
     # Dios me libre de usar todos los minutos de Github de Wiris
     timeout-minutes: 4
     steps:
-      - uses: actions/checkout@v2
-      - uses: cypress-io/github-action@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Write the cypress.env.json file
+        run: |
+          echo '${{ secrets.CYPRESS_ENV_FILE }}' > cypress.env.json
+
+      - name: Run all tests
+        uses: cypress-io/github-action@v4
